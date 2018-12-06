@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Rental Mobil Sesukamu</title>
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </h:head>
+    <body>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid" style="background-color: #e3f2fd;">
+                <div class="container">
+                    <h1 class="display-4"><center>Tugas Besar Praktikum RSBK</center></h1>
+                    <p class="lead"><center>Kelompok 12</center></p>
+                    <p class="lead"><center>Raka - Aswin - Rama - Firda</center></p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                    <h3 align="center" style="margin-bottom: 5%">Edit Penyewa</h3>
+                    <h:form>
+                    <table class="table table-striped">
+                    <tr>
+                       <td width="30%">ID Penyewa </td>
+                       <td><h:inputText value="#{EditPenyewa.penyewaId}" class="form-control form-control-sm" readonly="true"></h:inputText></td>
+                    </tr>
+                    <tr>
+                       <td width="30%">Nama </td>
+                       <td><h:inputText value="#{EditPenyewa.nama}" class="form-control form-control-sm" required="true"></h:inputText></td>
+                    </tr>
+                    <tr>
+                       <td>Alamat</td>
+                       <td><h:inputTextarea value="#{EditPenyewa.alamat}" class="form-control form-control-sm" required="true"></h:inputTextarea></td>
+                    </tr>
+                    <tr>
+                       <td>No. Telepon</td>
+                       <td><h:inputText value="#{EditPenyewa.notlp}" class="form-control form-control-sm" required="true"></h:inputText></td>
+                    </tr>
+                    <tr>
+                       <td>No. KTP</td>
+                       <td><h:inputText value="#{EditPenyewa.noktp}" class="form-control form-control-sm" required="true"></h:inputText></td>
+                    </tr>     
+                    </table>
+                    <div class="text-right">
+                       <h:commandButton value="Update" action="#{EditPenyewa.Update_Penyewa}" class="btn btn-warning">
+                            <f:param name="Update_penyewaId" value="#{EditPenyewa.penyewaId}" />
+                        </h:commandButton>
+                        <a href="penyewa.xhtml" class="btn btn-primary">Kembali</a>
+                    </div>
+                    </h:form></div></div>
+                </div>
+            </div>
+            <div style="margin:5% 0px;">
+                
+            </div>
+            <div class="row" style="padding: 0% 0%;">
+                <div class="col-9">
+                    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd; padding: 2%">
+                        <a class="navbar-brand" href="home.xhtml">Rental Mobil Sesukamu</a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.xhtml">Sewa Mobil</a>
+                            </li>
+                            <li class="nav-item">
+                                 <a class="nav-link" href="data_peminjaman.xhtml">Data Peminjaman</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mobil.xhtml">Data Mobil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="penyewa.xhtml">Data Penyewa</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-3" style="background-color: #e3f2fd; ">
+                    <h:form class="form-inline float-right">
+                        <p class="mt-3" style="padding: 7px 5px; background-color: #e3f2fd; font-size: 12px; border-radius: 3px;" >Login Sebagai : #{user}</p>&nbsp;
+                        <h:commandButton value="Logout" action="#{login.logout}" class="btn btn-danger btn-sm" />
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
